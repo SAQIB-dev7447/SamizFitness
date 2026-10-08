@@ -28,7 +28,6 @@ export default function Home() {
           <div className="hero-image-wrapper">
             <img src="/images/hero_image_1791467323557.jpg" alt="Fit man and woman holding dumbbells" className="hero-image" />
           </div>
-          </div>
         </section>
       </FadeIn>
 

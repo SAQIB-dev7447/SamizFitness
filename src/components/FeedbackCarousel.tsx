@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import FadeIn from './FadeIn';
+import { useState, useEffect } from 'react';
 
 const feedbacks = [
   { name: "John Doe", text: "SamiZ fitness changed my life! The trainers are top notch and the energy is unmatched.", role: "Member for 2 years" },
@@ -15,6 +16,12 @@ const feedbacks = [
 ];
 
 export default function FeedbackCarousel() {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section className="section" style={{ overflow: 'hidden' }}>
       <FadeIn direction="up">
@@ -25,45 +32,49 @@ export default function FeedbackCarousel() {
       </FadeIn>
       
       <FadeIn direction="up" delay={0.2}>
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          modules={[Pagination, Navigation, Autoplay]}
-          className="feedback-swiper"
-          style={{ paddingBottom: '50px' }}
-        >
-          {feedbacks.map((fb, idx) => (
-            <SwiperSlide key={idx} style={{ height: 'auto' }}>
-              <div style={{ backgroundColor: 'var(--surface)', padding: '30px', borderRadius: '16px', height: '100%', border: '1px solid var(--surface-light)', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', gap: '5px', color: '#F5B041', marginBottom: '15px' }}>
-                  ★ ★ ★ ★ ★
+        {mounted ? (
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            modules={[Pagination, Navigation, Autoplay]}
+            className="feedback-swiper"
+            style={{ paddingBottom: '50px' }}
+          >
+            {feedbacks.map((fb, idx) => (
+              <SwiperSlide key={idx} style={{ height: 'auto' }}>
+                <div style={{ backgroundColor: 'var(--surface)', padding: '30px', borderRadius: '16px', height: '100%', border: '1px solid var(--surface-light)', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', gap: '5px', color: '#F5B041', marginBottom: '15px' }}>
+                    ★ ★ ★ ★ ★
+                  </div>
+                  <p style={{ fontSize: '16px', color: '#fff', marginBottom: '20px', fontStyle: 'italic', flex: 1 }}>"{fb.text}"</p>
+                  <div>
+                    <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>{fb.name}</h4>
+                    <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>{fb.role}</p>
+                  </div>
                 </div>
-                <p style={{ fontSize: '16px', color: '#fff', marginBottom: '20px', fontStyle: 'italic', flex: 1 }}>"{fb.text}"</p>
-                <div>
-                  <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>{fb.name}</h4>
-                  <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>{fb.role}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div style={{ height: '300px', width: '100%' }}></div>
+        )}
       </FadeIn>
     </section>
   );

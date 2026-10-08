@@ -28,6 +28,10 @@ export default function Navbar() {
         <Link href="/" className="navbar-logo">
           {/* We assume the user saves the uploaded logo as logo.png */}
           <img src="/images/logo.png" alt="SamiZ fitness" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+          <div className="logo-text">
+            <span className="logo-samiz">SamiZ</span>
+            <span className="logo-fitness">fitness</span>
+          </div>
         </Link>
         
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>

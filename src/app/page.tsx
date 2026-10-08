@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
+import FeedbackCarousel from "@/components/FeedbackCarousel";
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
+      <FadeIn direction="up">
         <section className="hero">
           <div className="hero-content">
             <div className="hero-subtitle">
@@ -25,9 +28,12 @@ export default function Home() {
           <div className="hero-image-wrapper">
             <img src="/images/hero_image_1791467323557.jpg" alt="Fit man and woman holding dumbbells" className="hero-image" />
           </div>
+          </div>
         </section>
+      </FadeIn>
 
-        {/* Programs Section */}
+      {/* Programs Section */}
+      <FadeIn direction="right">
         <section className="section">
           <div className="section-header">
             <h2 className="section-title">OUR PROGRAMS</h2>
@@ -111,8 +117,12 @@ export default function Home() {
             <Link href="/programs" className="btn btn-outline">View All Programs Detail</Link>
           </div>
         </section>
+      </FadeIn>
 
-        {/* About Section */}
+      <FeedbackCarousel />
+
+      {/* About Section */}
+      <FadeIn direction="left">
         <section className="section about-section">
           <div className="about-image">
             <img src="/images/about_image_1791467517652.jpg" alt="Give shape to your body" />
@@ -125,8 +135,10 @@ export default function Home() {
             <Link href="#" className="btn btn-primary">Explore More</Link>
           </div>
         </section>
+      </FadeIn>
 
-        {/* Schedule Section */}
+      {/* Schedule Section */}
+      <FadeIn direction="right">
         <section className="section">
           <div className="section-header">
             <h2 className="section-title">OUR SCHEDULE</h2>
@@ -202,8 +214,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </FadeIn>
 
-        {/* Progress Section */}
+      {/* Progress Section */}
+      <FadeIn direction="left">
         <section className="section progress-section">
           <div className="progress-image">
             <img src="/images/progress_image_1791467531886.jpg" alt="Get stronger and fitter" />
@@ -244,8 +258,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </FadeIn>
 
-        {/* Pricing Section */}
+      {/* Pricing Section */}
+      <FadeIn direction="up">
         <section className="section">
           <div className="pricing-header">
             <h2>START YOUR BODY GOAL FROM CHOOSING OUR PACKAGE</h2>
@@ -277,10 +293,11 @@ export default function Home() {
               <div className="pricing-price">
                 $599<span>/ month</span>
               </div>
-              <Link href="#" className="btn btn-outline">Join Now</Link>
-            </div>
+            <Link href="#" className="btn btn-outline">Join Now</Link>
           </div>
-        </section>
+        </div>
+      </section>
+    </FadeIn>
     </>
   );
 }

@@ -586,7 +586,32 @@ h1, h2, h3, h4 {
   .hero-title {
     font-size: 50px;
   }
-  .navbar-links, .navbar .btn {
+  .navbar {
+    position: relative;
+  }
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface);
+    padding: 30px;
+    border-radius: 12px;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    gap: 20px;
+    text-align: center;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+  .navbar-links a {
+    font-size: 18px;
+    padding: 10px;
+  }
+  .navbar .btn {
     display: none;
   }
   .navbar-toggle {

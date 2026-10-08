@@ -4,38 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="container">
-        {/* Navbar */}
-        <nav className="navbar">
-          <div className="navbar-logo">
-            <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="1" y="1" width="18" height="38" stroke="#F5B041" strokeWidth="2"/>
-              <path d="M14 12C14 10.9 13.1 10 12 10H8C6.9 10 6 10.9 6 12V16C6 17.1 6.9 18 8 18H12V22H6V24H12C13.1 24 14 23.1 14 22V18C14 16.9 13.1 16 12 16H8V12H14Z" fill="#F5B041"/>
-              {/* Abstract silhouette to represent the people */}
-              <circle cx="26" cy="14" r="4" fill="#FFFFFF"/>
-              <path d="M22 20C22 17.8 23.8 16 26 16C28.2 16 30 17.8 30 20V28H22V20Z" fill="#FFFFFF"/>
-            </svg>
-            <div className="logo-text">
-              <span className="logo-samiz">SamiZ</span>
-              <span className="logo-fitness">fitness</span>
-            </div>
-          </div>
-          <div className="navbar-links">
-            <Link href="/" className="active">Home</Link>
-            <Link href="/programs">Programs</Link>
-            <Link href="#">Schedule</Link>
-            <Link href="#">About</Link>
-            <Link href="#">Contact Us</Link>
-          </div>
-          <button className="btn btn-primary">Join Now</button>
-          <button className="navbar-toggle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-        </nav>
-
-        {/* Hero Section */}
+      {/* Hero Section */}
         <section className="hero">
           <div className="hero-content">
             <div className="hero-subtitle">
@@ -312,11 +281,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <footer className="footer">
-          &copy; 2026 SamiZ fitness. All rights reserved.
-        </footer>
-      </div>
     </>
   );
 }

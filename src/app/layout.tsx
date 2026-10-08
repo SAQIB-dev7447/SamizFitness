@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "FITZONE | Unleash Your Potential",
+  title: "SamiZ fitness | Unleash Your Potential",
   description: "Join a community where goals are crushed, strength is built, and potential becomes power.",
 };
 
@@ -18,7 +20,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        {children}
+        <div className="container">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

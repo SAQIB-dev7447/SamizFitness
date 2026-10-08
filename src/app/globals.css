@@ -278,6 +278,9 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 80px;
 }
+.reverse-row {
+  flex-direction: row-reverse;
+}
 .about-image {
   flex: 1;
 }
@@ -532,7 +535,7 @@ h1, h2, h3, h4 {
 
 /* Mobile Responsive */
 @media (max-width: 992px) {
-  .hero, .about-section, .progress-section {
+  .hero, .about-section, .progress-section, .reverse-row {
     flex-direction: column;
     text-align: center;
   }

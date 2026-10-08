@@ -59,7 +59,7 @@ export default function ProgramsPage() {
         </div>
 
         {/* Weight Gain */}
-        <div className="about-section" style={{ flexDirection: 'row-reverse' }}>
+        <div className="about-section reverse-row">
           <div className="about-image">
             <img src="/images/program_2_1791467352006.jpg" alt="Weight Gain" style={{ filter: 'none' }} />
           </div>
@@ -97,7 +97,7 @@ export default function ProgramsPage() {
         </div>
 
         {/* Total Fitness */}
-        <div className="about-section" style={{ flexDirection: 'row-reverse' }}>
+        <div className="about-section reverse-row">
           <div className="about-image">
             <img src="/images/program_4_1791467393798.jpg" alt="Total Fitness" style={{ filter: 'none' }} />
           </div>
@@ -135,7 +135,7 @@ export default function ProgramsPage() {
         </div>
 
         {/* Cardio */}
-        <div className="about-section" style={{ flexDirection: 'row-reverse' }}>
+        <div className="about-section reverse-row">
           <div className="about-image">
             <img src="/images/about_image_1791467517652.jpg" alt="Cardio" style={{ filter: 'none' }} />
           </div>

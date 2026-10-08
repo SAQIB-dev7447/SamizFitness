@@ -1,69 +1,322 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <div className="container">
+        {/* Navbar */}
+        <nav className="navbar">
+          <div className="navbar-logo">
+            <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="18" height="38" stroke="#F5B041" strokeWidth="2"/>
+              <path d="M14 12C14 10.9 13.1 10 12 10H8C6.9 10 6 10.9 6 12V16C6 17.1 6.9 18 8 18H12V22H6V24H12C13.1 24 14 23.1 14 22V18C14 16.9 13.1 16 12 16H8V12H14Z" fill="#F5B041"/>
+              {/* Abstract silhouette to represent the people */}
+              <circle cx="26" cy="14" r="4" fill="#FFFFFF"/>
+              <path d="M22 20C22 17.8 23.8 16 26 16C28.2 16 30 17.8 30 20V28H22V20Z" fill="#FFFFFF"/>
+            </svg>
+            <div className="logo-text">
+              <span className="logo-samiz">SamiZ</span>
+              <span className="logo-fitness">fitness</span>
+            </div>
+          </div>
+          <div className="navbar-links">
+            <Link href="/" className="active">Home</Link>
+            <Link href="/programs">Programs</Link>
+            <Link href="#">Schedule</Link>
+            <Link href="#">About</Link>
+            <Link href="#">Contact Us</Link>
+          </div>
+          <button className="btn btn-primary">Join Now</button>
+          <button className="navbar-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </nav>
+
+        {/* Hero Section */}
+        <section className="hero">
+          <div className="hero-content">
+            <div className="hero-subtitle">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              </svg>
+              Smart Goals
+            </div>
+            <h1 className="hero-title">UNLEASH YOUR<br/><span className="text-primary">POTENTIAL</span></h1>
+            <p className="hero-desc">
+              Join a community where goals are crushed, strength is built, and potential becomes power at SamiZ fitness.
+            </p>
+            <div className="hero-buttons">
+              <Link href="#" className="btn btn-primary">Get Started</Link>
+              <Link href="/programs" className="btn btn-outline">Explore Programs</Link>
+            </div>
+          </div>
+          <div className="hero-image-wrapper">
+            <img src="/images/hero_image_1791467323557.jpg" alt="Fit man and woman holding dumbbells" className="hero-image" />
+          </div>
+        </section>
+
+        {/* Programs Section */}
+        <section className="section">
+          <div className="section-header">
+            <h2 className="section-title">OUR PROGRAMS</h2>
+            <p className="section-subtitle">Discover the perfect programs to match your goals and fitness level.</p>
+          </div>
+          <div className="programs-grid">
+            <Link href="/programs" className="program-card">
+              <img src="/images/program_1_1791467337228.jpg" alt="Weight Loss" />
+              <div className="program-content">
+                <h3>WEIGHT LOSS</h3>
+                <p>Effective routines combining cardio and strength to shed unwanted fat.</p>
+              </div>
+              <div className="program-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </Link>
+            <Link href="/programs" className="program-card">
+              <img src="/images/program_2_1791467352006.jpg" alt="Weight Gain" />
+              <div className="program-content">
+                <h3>WEIGHT GAIN</h3>
+                <p>Structured hypertrophy programs to help you pack on clean muscle mass.</p>
+              </div>
+              <div className="program-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </Link>
+            <Link href="/programs" className="program-card">
+              <img src="/images/program_3_1791467380246.jpg" alt="Fat Loss" />
+              <div className="program-content">
+                <h3>FAT LOSS</h3>
+                <p>High-intensity workouts designed to maximize calorie burn and lean out.</p>
+              </div>
+              <div className="program-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </Link>
+            <Link href="/programs" className="program-card">
+              <img src="/images/program_4_1791467393798.jpg" alt="Total Fitness" />
+              <div className="program-content">
+                <h3>TOTAL FITNESS</h3>
+                <p>A balanced approach for overall health, endurance, and mobility.</p>
+              </div>
+              <div className="program-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </Link>
+            <Link href="/programs" className="program-card">
+              <img src="/images/progress_image_1791467531886.jpg" alt="Personal Training" />
+              <div className="program-content">
+                <h3>PERSONAL TRAINING</h3>
+                <p>One-on-one coaching tailored exactly to your unique goals and schedule.</p>
+              </div>
+              <div className="program-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </Link>
+            <Link href="/programs" className="program-card">
+              <img src="/images/about_image_1791467517652.jpg" alt="Cardio" />
+              <div className="program-content">
+                <h3>CARDIO</h3>
+                <p>Heart-pumping sessions to improve cardiovascular health and stamina.</p>
+              </div>
+              <div className="program-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </Link>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link href="/programs" className="btn btn-outline">View All Programs Detail</Link>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="section about-section">
+          <div className="about-image">
+            <img src="/images/about_image_1791467517652.jpg" alt="Give shape to your body" />
+          </div>
+          <div className="about-content">
+            <h2>GIVE SHAPE TO<br/>YOUR BODY</h2>
+            <p>
+              At <strong style={{ color: 'var(--primary)' }}>SamiZ fitness</strong>, we help you build strength, confidence, and lasting habits. With expert coaches and proven programs, we guide you toward your best shape.
+            </p>
+            <Link href="#" className="btn btn-primary">Explore More</Link>
+          </div>
+        </section>
+
+        {/* Schedule Section */}
+        <section className="section">
+          <div className="section-header">
+            <h2 className="section-title">OUR SCHEDULE</h2>
+          </div>
+          <div className="schedule-tabs">
+            <button className="schedule-tab active">Classes</button>
+            <button className="schedule-tab">Flexibility</button>
+            <button className="schedule-tab">Cardio</button>
+            <button className="schedule-tab">HIIT</button>
+            <button className="schedule-tab">Bodybuilding</button>
+            <button className="schedule-tab">Crossfit</button>
+          </div>
+          <div className="schedule-grid">
+            <div className="schedule-row">
+              <div className="schedule-day">Monday</div>
+              <div className="schedule-slots">
+                <div className="schedule-slot">9:00am - 10:00am</div>
+                <div className="schedule-slot"></div>
+                <div className="schedule-slot">11:00am - 12:00pm</div>
+                <div className="schedule-slot">5:00pm - 6:00pm</div>
+                <div className="schedule-slot">8:00pm - 9:00pm</div>
+              </div>
+            </div>
+            <div className="schedule-row">
+              <div className="schedule-day">Tuesday</div>
+              <div className="schedule-slots">
+                <div className="schedule-slot"></div>
+                <div className="schedule-slot">10:00am - 11:00am</div>
+                <div className="schedule-slot"></div>
+                <div className="schedule-slot"></div>
+                <div className="schedule-slot">8:00pm - 9:00pm</div>
+              </div>
+            </div>
+            <div className="schedule-row">
+              <div className="schedule-day">Wed</div>
+              <div className="schedule-slots">
+                <div className="schedule-slot">9:00am - 10:00am</div>
+                <div className="schedule-slot">10:00am - 11:00am</div>
+                <div className="schedule-slot"></div>
+                <div className="schedule-slot">5:00pm - 6:00pm</div>
+                <div className="schedule-slot">8:00pm - 9:00pm</div>
+              </div>
+            </div>
+            <div className="schedule-row">
+              <div className="schedule-day">Thursday</div>
+              <div className="schedule-slots">
+                <div className="schedule-slot">9:00am - 10:00am</div>
+                <div className="schedule-slot"></div>
+                <div className="schedule-slot">11:00am - 12:00pm</div>
+                <div className="schedule-slot">5:00pm - 6:00pm</div>
+                <div className="schedule-slot"></div>
+              </div>
+            </div>
+            <div className="schedule-row">
+              <div className="schedule-day">Friday</div>
+              <div className="schedule-slots">
+                <div className="schedule-slot">9:00am - 10:00am</div>
+                <div className="schedule-slot"></div>
+                <div className="schedule-slot">11:00am - 12:00pm</div>
+                <div className="schedule-slot">5:00pm - 6:00pm</div>
+                <div className="schedule-slot"></div>
+              </div>
+            </div>
+            <div className="schedule-row">
+              <div className="schedule-day">Saturday</div>
+              <div className="schedule-slots">
+                <div className="schedule-slot">9:00am - 10:00am</div>
+                <div className="schedule-slot">10:00am - 11:00am</div>
+                <div className="schedule-slot">11:00am - 12:00pm</div>
+                <div className="schedule-slot">5:00pm - 6:00pm</div>
+                <div className="schedule-slot">8:00pm - 9:00pm</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Progress Section */}
+        <section className="section progress-section">
+          <div className="progress-image">
+            <img src="/images/progress_image_1791467531886.jpg" alt="Get stronger and fitter" />
+          </div>
+          <div className="progress-content">
+            <h2>GET STRONGER AND FITTER WITH OUR EXPERIENCED TRAINERS</h2>
+            <p>
+              Build strength and confidence with support from our expert trainers, dedicated to your success at SamiZ fitness.
+            </p>
+            <div className="progress-bars">
+              <div className="progress-item">
+                <div className="progress-item-header">
+                  <span>Fitness Training</span>
+                  <span>94%</span>
+                </div>
+                <div className="progress-bar-bg">
+                  <div className="progress-bar-fill" style={{ width: '94%' }}></div>
+                </div>
+              </div>
+              <div className="progress-item">
+                <div className="progress-item-header">
+                  <span>Cardio Training</span>
+                  <span>82%</span>
+                </div>
+                <div className="progress-bar-bg">
+                  <div className="progress-bar-fill" style={{ width: '82%' }}></div>
+                </div>
+              </div>
+              <div className="progress-item">
+                <div className="progress-item-header">
+                  <span>Body Building</span>
+                  <span>90%</span>
+                </div>
+                <div className="progress-bar-bg">
+                  <div className="progress-bar-fill" style={{ width: '90%' }}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="section">
+          <div className="pricing-header">
+            <h2>START YOUR BODY GOAL FROM CHOOSING OUR PACKAGE</h2>
+            <p>
+              Kickstart your fitness journey with a package tailored to your needs. Whether you are aiming to build strength, lose weight, improve overall wellness, or simply feel more confident in your skin.
+            </p>
+          </div>
+          <div className="pricing-grid">
+            <div className="pricing-card">
+              <h3 className="pricing-name">Basic Plan</h3>
+              <p className="pricing-desc">Great for beginners, a simple and effective access to start building a good habit.</p>
+              <div className="pricing-price">
+                $299<span>/ month</span>
+              </div>
+              <Link href="#" className="btn btn-outline">Join Now</Link>
+            </div>
+            <div className="pricing-card popular">
+              <div className="popular-tag">Popular</div>
+              <h3 className="pricing-name">Regular Plan</h3>
+              <p className="pricing-desc">Great for busy professionals, enhanced workouts, and training to step up your level.</p>
+              <div className="pricing-price">
+                $399<span>/ month</span>
+              </div>
+              <Link href="#" className="btn btn-primary">Join Now</Link>
+            </div>
+            <div className="pricing-card">
+              <h3 className="pricing-name">Premium Plan</h3>
+              <p className="pricing-desc">Personalized training, premium perks, and elite access for maximum results.</p>
+              <div className="pricing-price">
+                $599<span>/ month</span>
+              </div>
+              <Link href="#" className="btn btn-outline">Join Now</Link>
+            </div>
+          </div>
+        </section>
+
+        <footer className="footer">
+          &copy; 2026 SamiZ fitness. All rights reserved.
+        </footer>
+      </div>
+    </>
   );
 }
